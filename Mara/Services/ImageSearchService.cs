@@ -8,10 +8,14 @@ namespace Mara.Services
     internal class ImageSearchService
     {
 
-        private readonly string apiKey = "nRsOLSxogeIjxF48y7cmnDeGl8SlNMl960uww0D9f7QjoDgx3PVWQF9f";
+        private readonly string apiKey = Environment.GetEnvironmentVariable("PEXELS_API_KEY") ?? "";
+
 
         public async Task<string> RechercherImage(string query)
         {
+            MessageBox.Show(
+    $"Clé trouvée : {!string.IsNullOrEmpty(apiKey)}"
+);
             using HttpClient client = new HttpClient();
 
             string url =

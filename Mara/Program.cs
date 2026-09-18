@@ -1,3 +1,5 @@
+using DotNetEnv;
+
 namespace Mara
 {
     internal static class Program
@@ -8,6 +10,12 @@ namespace Mara
         [STAThread]
         static void Main()
         {
+            string cheminEnv = Path.Combine(
+               Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName,
+               ".env"
+           );
+
+            Env.Load(cheminEnv);
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();

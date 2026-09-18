@@ -20,6 +20,7 @@ namespace Mara
         {
             InitializeComponent();
             this.Load += form_load;
+            DotNetEnv.Env.Load();
         }
 
         private async void form_load(object sender, EventArgs e)
