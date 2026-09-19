@@ -1,6 +1,7 @@
 using Whisper.net.Ggml;
 using Mara.Services;
 using System.Media;
+using System.Drawing;
 using Microsoft.VisualBasic.Devices;
 using System.Text.Json;
 
@@ -20,6 +21,14 @@ namespace Mara
         {
             InitializeComponent();
             this.Load += form_load;
+            // Si une image GIF est définie en tant que BackgroundImage dans le designer,
+            // la transférer vers Image pour assurer l'animation.
+            if (pictureBox1.BackgroundImage != null)
+            {
+                pictureBox1.Image = pictureBox1.BackgroundImage;
+                pictureBox1.BackgroundImage = null;
+                ImageAnimator.Animate(pictureBox1.Image, null);
+            }
             DotNetEnv.Env.Load();
         }
 
@@ -44,7 +53,6 @@ namespace Mara
         private async void button1_MouseClick(object sender, MouseEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-
             if (!isEcoute)
             {
                 button1.Enabled = true;
@@ -59,6 +67,8 @@ namespace Mara
                 isEcoute = false;
                 button1.Text = "Transcription...";
                 speechService.StopRecording();
+                pictureBox1.Image = Image.FromFile("C:\\Users\\yahay\\source\\repos\\Mara\\Mara\\thinking.gif");
+
 
                 string text = await speechService.Transcription("recording.wav");
 
@@ -78,10 +88,13 @@ namespace Mara
                     }
                     else
                     {
+                        pictureBox1.Image = Image.FromFile("C:\\Users\\yahay\\source\\repos\\Mara\\Mara\\mara talking.gif");
                         await this.ttsService.Parler(reponse);
                         Cursor.Current = Cursors.Default;
                         textBox1.Text = reponse;
                         button1.Enabled = true;
+
+
 
                     }
                 }
@@ -92,7 +105,11 @@ namespace Mara
                     textBox1.Text = reponse;
                     button1.Enabled = true;
                 }
+
+
                 button1.Enabled = true;
+                pictureBox1.Image = Image.FromFile("C:\\Users\\yahay\\source\\repos\\Mara\\Mara\\mara.gif");
+
 
 
 

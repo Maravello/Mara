@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             button1 = new Button();
             label2 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -48,9 +51,9 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            button1.Location = new Point(182, 170);
+            button1.Location = new Point(207, 396);
             button1.Name = "button1";
-            button1.Size = new Size(372, 34);
+            button1.Size = new Size(214, 34);
             button1.TabIndex = 1;
             button1.Text = "Parler";
             button1.UseVisualStyleBackColor = true;
@@ -67,16 +70,16 @@
             // 
             // textBox1
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(12, 233);
+            textBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.Location = new Point(12, 461);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(776, 185);
+            textBox1.Size = new Size(618, 200);
             textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(212, 42);
+            textBox2.Location = new Point(137, 41);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
@@ -85,11 +88,23 @@
             textBox2.Text = "Bien le boujour Yahaya";
             textBox2.TextAlign = HorizontalAlignment.Center;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = SystemColors.ControlDark;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.Location = new Point(35, 105);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(537, 269);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(642, 693);
+            Controls.Add(pictureBox1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label2);
@@ -98,6 +113,7 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -109,5 +125,6 @@
         private Label label2;
         private TextBox textBox1;
         private TextBox textBox2;
+        private PictureBox pictureBox1;
     }
 }
