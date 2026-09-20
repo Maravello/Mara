@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/Éléments de solution/">
+    <File Path="Mara/Mara.ico" />
+  </Folder>
   <Project Path="Mara/Mara.csproj" />
 </Solution>

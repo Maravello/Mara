@@ -51,9 +51,9 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            button1.Location = new Point(207, 396);
+            button1.Location = new Point(207, 385);
             button1.Name = "button1";
-            button1.Size = new Size(214, 34);
+            button1.Size = new Size(231, 34);
             button1.TabIndex = 1;
             button1.Text = "Parler";
             button1.UseVisualStyleBackColor = true;
@@ -71,30 +71,32 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Location = new Point(12, 461);
+            textBox1.Location = new Point(12, 438);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(618, 200);
+            textBox1.Size = new Size(635, 200);
             textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(137, 41);
+            textBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBox2.Location = new Point(128, 12);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
-            textBox2.Size = new Size(330, 46);
+            textBox2.Size = new Size(389, 76);
             textBox2.TabIndex = 4;
             textBox2.Text = "Bien le boujour Yahaya";
             textBox2.TextAlign = HorizontalAlignment.Center;
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.BackColor = SystemColors.ControlDark;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.Location = new Point(35, 105);
+            pictureBox1.Location = new Point(50, 94);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(537, 269);
+            pictureBox1.Size = new Size(539, 269);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -103,13 +105,14 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(642, 693);
+            ClientSize = new Size(659, 670);
             Controls.Add(pictureBox1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

@@ -67,7 +67,7 @@ namespace Mara
                 isEcoute = false;
                 button1.Text = "Transcription...";
                 speechService.StopRecording();
-                pictureBox1.Image = Image.FromFile("C:\\Users\\yahay\\source\\repos\\Mara\\Mara\\thinking.gif");
+                ChangerGif("C:\\Users\\yahay\\source\\repos\\Mara\\Mara\\thinking.gif");
 
 
                 string text = await speechService.Transcription("recording.wav");
@@ -88,7 +88,7 @@ namespace Mara
                     }
                     else
                     {
-                        pictureBox1.Image = Image.FromFile("C:\\Users\\yahay\\source\\repos\\Mara\\Mara\\mara talking.gif");
+                        ChangerGif("C:\\Users\\yahay\\source\\repos\\Mara\\Mara\\mara talking.gif");
                         await this.ttsService.Parler(reponse);
                         Cursor.Current = Cursors.Default;
                         textBox1.Text = reponse;
@@ -108,7 +108,7 @@ namespace Mara
 
 
                 button1.Enabled = true;
-                pictureBox1.Image = Image.FromFile("C:\\Users\\yahay\\source\\repos\\Mara\\Mara\\mara.gif");
+                ChangerGif("C:\\Users\\yahay\\source\\repos\\Mara\\Mara\\mara.gif");
 
 
 
@@ -118,6 +118,22 @@ namespace Mara
             }
 
 
+        }
+
+        private void ChangerGif(string chemin)
+        {
+            Image ancienneImage = pictureBox1.Image;
+
+            Image nouvelleImage = Image.FromFile(chemin);
+
+            pictureBox1.Image = nouvelleImage;
+
+            if (ImageAnimator.CanAnimate(nouvelleImage))
+            {
+                ImageAnimator.Animate(nouvelleImage, null);
+            }
+
+            ancienneImage?.Dispose();
         }
 
 
